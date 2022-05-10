@@ -91,6 +91,10 @@ main section.categories-show {
           padding-right: 1em;
           background-color: rgba(0, 130, 29, 0.7);
           color: white;
+          &:hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+          }
         }
 
         .sold-out {
@@ -109,4 +113,18 @@ main section.categories-show {
       }
     }
   }
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-1deg); }
+  20% { transform:  rotate(1deg); }
+  30% { transform: rotate(0deg); }
+  40% { transform:  rotate(1deg); }
+  50% { transform:  rotate(-1deg); }
+  60% { transform:  rotate(0deg); }
+  70% { transform: rotate(-1deg); }
+  80% { transform: rotate(1deg); }
+  90% { transform: rotate(0deg); }
+  100% { transform:  rotate(-1deg); }
 }
