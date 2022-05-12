@@ -103,6 +103,19 @@ form.button_to {
     text-transform: uppercase;
     font-style: italic;
   }
+
+  .login-nav {
+    display: flex;
+    flex-flow: wrap row;
+
+    .nav-user {
+      display: flex;
+      align-items: center;
+      color: white;
+      opacity: 0.5;
+      margin-right: 0.5em;
+    }
+  }
 }
 
 .page-header {
