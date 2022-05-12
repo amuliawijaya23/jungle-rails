@@ -6,6 +6,7 @@ RSpec.describe Product, type: :model do
     it "is valid with valid attributes" do
       @category = Category.new(name: "Anything")
       @product = Product.new(name: "Anything", price: 123.45, quantity: 4, category: @category)
+      expect(@category).to be_valid
       expect(@product).to be_valid
     end
 
@@ -14,9 +15,9 @@ RSpec.describe Product, type: :model do
       @product = Product.new(name: nil, price: 123.45, quantity: 4, category: @category)
       expect(@product).to_not be_valid
     end
-    it "is not valid without a valid price" do
+    it "is not valid without a price" do
       @category = Category.new(name: "Anything")
-      @product = Product.new(name: "Anything", price: 'string', quantity: 4, category: @category)
+      @product = Product.new(name: "Anything", price: 'nil', quantity: 4, category: @category)
       expect(@product).to_not be_valid
     end
     it "is not valid without a quantity" do
